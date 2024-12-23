@@ -8,6 +8,13 @@
     font-weight: 400;
     font-style: normal;
 }
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background: linear-gradient(135deg, #000000, #1a0b25);
+    line-height: 1.6;
+}
 .navbar{
     position: sticky;
     display: flex;
@@ -17,7 +24,7 @@
     background-color: rgba(0, 0, 0, 0.95);
     height: 75px;
     width: 100vw;
-    border-bottom: 2px solid purple;
+    border-bottom: 0.5px solid rgb(59, 2, 59);
 }
 .icons{
     position: relative;
@@ -28,6 +35,11 @@
 .icons div{
     padding: 20px;
     font-size: 18px;
+    transition: 0.3s linear;
+}
+.icons div:hover{
+    color: #ff00ff;
+    /* background : linear-gradient(45deg, #ff00ff, #00ffff); */
 }
 .navbar .logo{
     font-family: "Fira Code", serif;
@@ -36,4 +48,54 @@
     font-style: italic;
     font-size: 25px;
     padding-left:140px ;
+}
+.hero{
+    width: 100vw;
+    height: 652px;
+    background-color: rgba(0, 0, 0,1);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-img{
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background-color: red;
+}
+.name{
+    font-size: 50px;
+}
+.name h1{
+    font-weight: 700;
+    /* color: linear-gradient(45deg, rgb(188, 19, 254), rgb(0, 255, 136)); */
+}
+.gradient-text{
+    background: linear-gradient(45deg, rgb(188, 19, 254), rgb(0, 255, 136));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: GLOW 5s linear infinite;
+}
+.tag-line{
+    font-size: 25px;
+}
+.links a{
+    text-decoration: none;
+    color: white;
+}
+@keyframes GLOW{
+    0%,100%{
+        filter: brightness(160%);
+    }
+    50%{
+        filter: brightness(100%);
+    }
 }
