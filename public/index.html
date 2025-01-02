@@ -9,7 +9,50 @@
 <body>
     <header>
         <div class="navbar">
-            <div class="logo">Sourabh</div>
+            <div class="logo"><div class="logo">
+                <svg id="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150">
+                    <defs>
+                        <!-- Rich purple gradient for main S -->
+                        <linearGradient id="purpleGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6B2FBE"/>
+                            <stop offset="100%" style="stop-color:#3B1B6B"/>
+                        </linearGradient>
+                        <!-- Light purple shine effect -->
+                        <filter id="glow2">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Deep shadow -->
+                    <path class="deep-shadow-path2" d="M15,50 C15,50 65,50 65,50 C80,50 80,65 80,70 C80,75 80,90 65,90 C65,90 15,90 15,90 C0,90 0,105 0,110 C0,115 0,130 15,130 C15,130 65,130 65,130" 
+                          stroke="rgba(107,47,190,0.1)" 
+                          stroke-width="10"
+                          fill="none"/>
+                    
+                    <!-- Middle shadow -->
+                    <path class="middle-shadow-path2" d="M20,45 C20,45 70,45 70,45 C85,45 85,60 85,65 C85,70 85,85 70,85 C70,85 20,85 20,85 C5,85 5,100 5,105 C5,110 5,125 20,125 C20,125 70,125 70,125" 
+                          stroke="rgba(107,47,190,0.2)" 
+                          stroke-width="9"
+                          fill="none"/>
+                    
+                    <!-- Main S path -->
+                    <path class="main-path2" d="M25,40 C25,40 75,40 75,40 C90,40 90,55 90,60 C90,65 90,80 75,80 C75,80 25,80 25,80 C10,80 10,95 10,100 C10,105 10,120 25,120 C25,120 75,120 75,120" 
+                          stroke="url(#purpleGradient2)" 
+                          stroke-width="8"
+                          fill="none"
+                          filter="url(#glow)"/>
+                    
+                    <!-- Shine effect -->
+                    <path class="shine-path2" d="M25,40 C25,40 75,40 75,40 C90,40 90,55 90,60 C90,65 90,80 75,80 C75,80 25,80 25,80 C10,80 10,95 10,100 C10,105 10,120 25,120 C25,120 75,120 75,120" 
+                          stroke="#AB82FF" 
+                          stroke-width="2"
+                          fill="none"/>
+                </svg>
+            </div></div>
             <div class="icons">
                 <div class="Home">Home</div>
                 <div class="About Me">About Me</div>
@@ -18,11 +61,11 @@
             </div>
         </div>
     </header>
-    <main>
+    <section class="hero-main">
         <div class="hero">
             <div class="hero-text">
                 <div class="name">
-                    <h1>Hi, I am <span class="gradient-text tbl-name">Sourabh</span></h1>
+                    <h1>Hi, I am <span class="gradient-text">Sourabh</span></h1>
                 </div>
                 <div class="tag-line">
                     <p>A <span class="tubelight">Full-Stack Web Developer</span> Who Brings Ideas to Life</p>
@@ -42,7 +85,57 @@
             </div>
             <div class="hero-img"></div>
         </div>
-    </main>
+    </section>
+    <div class="loading-page">
+        <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150">
+            <defs>
+                <!-- Rich purple gradient for main S -->
+                <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#6B2FBE"/>
+                    <stop offset="100%" style="stop-color:#3B1B6B"/>
+                </linearGradient>
+                <!-- Light purple shine effect -->
+                <filter id="glow">
+                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            
+            <!-- Deep shadow -->
+            <path class="deep-shadow-path" d="M15,50 C15,50 65,50 65,50 C80,50 80,65 80,70 C80,75 80,90 65,90 C65,90 15,90 15,90 C0,90 0,105 0,110 C0,115 0,130 15,130 C15,130 65,130 65,130" 
+                  stroke="rgba(107,47,190,0.1)" 
+                  stroke-width="10"
+                  fill="none"/>
+            
+            <!-- Middle shadow -->
+            <path class="middle-shadow-path" d="M20,45 C20,45 70,45 70,45 C85,45 85,60 85,65 C85,70 85,85 70,85 C70,85 20,85 20,85 C5,85 5,100 5,105 C5,110 5,125 20,125 C20,125 70,125 70,125" 
+                  stroke="rgba(107,47,190,0.2)" 
+                  stroke-width="9"
+                  fill="none"/>
+            
+            <!-- Main S path -->
+            <path class="main-path" d="M25,40 C25,40 75,40 75,40 C90,40 90,55 90,60 C90,65 90,80 75,80 C75,80 25,80 25,80 C10,80 10,95 10,100 C10,105 10,120 25,120 C25,120 75,120 75,120" 
+                  stroke="url(#purpleGradient)" 
+                  stroke-width="8"
+                  fill="none"
+                  filter="url(#glow)"/>
+            
+            <!-- Shine effect -->
+            <path class="shine-path" d="M25,40 C25,40 75,40 75,40 C90,40 90,55 90,60 C90,65 90,80 75,80 C75,80 25,80 25,80 C10,80 10,95 10,100 C10,105 10,120 25,120 C25,120 75,120 75,120" 
+                  stroke="#AB82FF" 
+                  stroke-width="2"
+                  fill="none"/>
+        </svg>
+
+        <div class="name-container">
+            <div class="logo-name">Hi,There</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

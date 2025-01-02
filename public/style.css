@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -16,10 +18,18 @@ html {
 }
 body{
     background: linear-gradient(135deg, #000000, #1a0b25);
-    line-height: 1.6;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
     /* background-color: #0a0a0a; */
     /* color: white; */
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal; 
+}
+.logo{
+    position: relative;
+    right: 20px;
+    bottom: 3px;
 }
 .navbar{
     position: sticky;
@@ -28,7 +38,7 @@ body{
     justify-content: space-between;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.95);
-    height: 75px;
+    height: 80px;
     width: 100vw;
     border-bottom: 0.5px solid rgb(59, 2, 59);
 }
@@ -51,14 +61,15 @@ body{
     font-family: "Fira Code", serif;
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: italic;
+    font-style: normal;
     font-size: 25px;
     padding-left:140px ;
 }
 .hero{
     width: 100vw;
-    height: 652px;
-    background-color: rgba(0, 0, 0,1);
+    height: 600px;
+    background-color: rgba(0, 0, 0,0.5);
+    /* background-color: red; */
     color: white;
     display: flex;
     justify-content: space-around;
@@ -69,18 +80,21 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    top: 20px;
 }
 .hero-img{
-    height: 390px;
-    width: 390px;
+    height: 460px;
+    width: 460px;
     border-radius: 50%;
     position: relative;
-    bottom: 50px;
+    top: 30px;
+    /* bottom: 10px; */
     background-image: url(assets/profile-pic.png);
-    background-size: contain;
+    background-size: cover;
 }
 .name{
-    font-size: 43px;
+    font-size: 62px;
     height: 140px;
     position: relative;
     bottom: 45px;
@@ -102,7 +116,7 @@ body{
 .tag-line{
     padding-bottom: 20px;
     position: relative;
-    bottom: 40px;
+    bottom: 34px;
     animation: float 6s ease-in-out infinite;
 }
 .tag-line p{
@@ -139,38 +153,252 @@ body{
     font-size: 18px;
     padding-top: 11.5px;
 }
-
-.tbl-name{
-    /* color: #0e3742; */
+/* For blinking */
+/* .logo h2{
+    font-size: 35px;
+    position: relative;
+    Letter-spacing: 2px;
+    color: #0e3742;
     width: 100%;
     text-align: center;
     -webkit-box-reflect: below 1px linear-gradient(transparent,#0008);
+    Line-height: 0.70em;
     outline: none;
     animation: animate 5s linear infinite;
-    /* _______________ */
-    /* background: linear-gradient(45deg, rgb(188, 19, 254), rgb(0, 255, 136)); */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+} */
+/* For loading animation  */
+.container {
+    background-color: black;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
-@keyframes animate{
+
+.loading-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    align-items: center;
+    justify-content: center;
+    perspective: 2000px;
+}
+
+#svg {
+    height: 250px;
+    width: 250px;
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 0 25px rgba(107,47,190,0.3));
+    margin-bottom: -15px;
+}
+#svg2{
+    height: 80px;
+    width: 80px;
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 0 25px rgba(107,47,190,0.3));
+    margin-bottom: -15px;
+}
+/* ____________________________________________ */
+/* for svg2  */
+.deep-shadow-path2,
+.middle-shadow-path2,
+.main-path2,
+.shine-path2 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw2 3s ease forwards infinite;
+    transform-style: preserve-3d;
+}
+
+.deep-shadow-path2 {
+    animation-delay: 0s;
+    filter: blur(12px);
+    transform: translateZ(-25px);
+    opacity: 0.15;
+}
+
+.middle-shadow-path2 {
+    animation-delay: 0.1s;
+    filter: blur(6px);
+    transform: translateZ(-15px);
+    opacity: 0.3;
+}
+
+.main-path2 {
+    animation-delay: 0.2s;  
+    filter: drop-shadow(0 0 15px rgba(107,47,190,0.5));
+    transform: translateZ(0);
+    opacity: 1;
+}
+
+.shine-path2 {
+    animation: draw2 3s ease forwards, borderShine 2s linear infinite;
+    animation-delay: 0.2s;
+    transform: translateZ(5px);
+    opacity: 0;
+}
+
+@keyframes draw2 {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes borderShine2 {
+    0% {
+        stroke-dashoffset: 1000;
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: -1000;
+        opacity: 0;
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: rotateX(25deg) rotateY(-25deg) translateZ(0) translateY(0);
+    }
+    50% {
+        transform: rotateX(30deg) rotateY(-30deg) translateZ(30px) translateY(-15px);
+    }
+}
+/* ___________________________________________ */
+.deep-shadow-path,
+.middle-shadow-path,
+.main-path,
+.shine-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2s ease forwards ;
+    transform-style: preserve-3d;
+}
+
+.deep-shadow-path {
+    animation-delay: 0s;
+    filter: blur(12px);
+    transform: translateZ(-25px);
+    opacity: 0.15;
+}
+
+.middle-shadow-path {
+    animation-delay: 0.1s;
+    filter: blur(6px);
+    transform: translateZ(-15px);
+    opacity: 0.3;
+}
+
+.main-path {
+    animation-delay: 0.2s;  
+    filter: drop-shadow(0 0 15px rgba(107,47,190,0.5));
+    transform: translateZ(0);
+    opacity: 1;
+}
+
+.shine-path {
+    animation: draw 2s ease forwards, borderShine 3s linear infinite;
+    animation-delay: 0.2s;
+    transform: translateZ(5px);
+    opacity: 0;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes borderShine {
+    0% {
+        stroke-dashoffset: 1000;
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: -1000;
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: rotateX(25deg) rotateY(-25deg) translateZ(0) translateY(0);
+    }
+    50% {
+        transform: rotateX(30deg) rotateY(-30deg) translateZ(30px) translateY(-15px);
+    }
+}
+
+.name-container {
+    height: 30px;
+    overflow: hidden;
+    transform: translateZ(30px);
+}
+
+.logo-name {
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    right: 10px;
+}
+/* _______________________________________ */
+/* @keyframes animate{
     0%,18%, 20%,50.1%,60%,65.1%,88%,90.1%,92%{
-        background: linear-gradient(45deg, rgb(188, 19, 254), rgb(0, 255, 136));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        color: #1a001a;
         text-shadow: none;
     }
     18.1%, 20.1%, 30%, 50%,60.1%,65%,80.1%,90%,92.1%, 100%{
         color: #fff;
-        text-shadow:0 0 10px #FC03F8,
-                    0 0 20px #FC03F8,
-                    0 0 40px #FC03F8,
-                    0 0 80px #FC03F8,
-                    0 0 160px #FC03F8;
+        text-shadow:0 0 10px #8f048c,
+                    0 0 20px #8f048c,
+                    0 0 40px #8f048c,
+                    0 0 80px #8f048c,
+                    0 0 160px #8f048c;
     }
-}
+} */
 
+/* For Floating circles */
+.hero-main{
+    min-height: 600px;
+  position: relative;
+  /* top: 31.25rem; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  overflow: hidden;
+}
+/* ___________________________________ */
 @keyframes GLOW{
     0%,100%{
         filter: brightness(160%);
